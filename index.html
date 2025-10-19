@@ -102,6 +102,14 @@
 
     <div id="unity-container" class="unity-mobile">
         <canvas id="unity-canvas" style="width: 100%; height: 100%; background: #0000; z-index: -99"></canvas>
+        <div id="startARDiv" class="ctaDiv">
+    <p id="camera-text">
+        Сейчас мы запросим доступ к вашей камере,<br>
+        чтобы вы могли увидеть объект в дополненной реальности.<br>
+        Пожалуйста, разрешите использование камеры в следующем окне.
+    </p>
+    <button id="startARButton" onclick="StartAR()">Продолжить</button>
+</div>
         <div id="unity-loading-bar">0%</div>
         <canvas id="video-canvas"></canvas>
     </div>
