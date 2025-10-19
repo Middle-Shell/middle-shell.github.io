@@ -52,7 +52,16 @@
         <p style="text-align: center; width:60vw;">Сейчас мы запросим доступ к вашей камере,
 чтобы вы могли увидеть объект в дополненной реальности.
 Пожалуйста, разрешите использование камеры в следующем окне.</p>
-        <button id="startARButton" onclick="StartAR()" style="display:none">Продолжить</button>
+        <button id="startARButton" onclick="StartAR()" style="
+    display: none;
+    background-color: white;   /* белый фон */
+    color: #0a3d62;            /* синий текст */
+    border: 2px solid #0a3d62; /* рамка синяя */
+    border-radius: 8px;        /* закругление углов */
+    padding: 10px 20px;        /* внутренние отступы */
+    font-size: 1em;
+    cursor: pointer;
+">Продолжить</button>
     </div>
     <div id="screenshotDiv" style="display: none;" class="ctaDiv">
         <div style="position:relative; background-color:white; padding:10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);">
