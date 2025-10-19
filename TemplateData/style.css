@@ -1,16 +1,70 @@
-body { padding: 0; margin: 0 }
-#unity-container { position: absolute }
-#unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
-#unity-container.unity-mobile { width: 100%; height: 100% }
-#unity-canvas { background: #231F20 }
-.unity-mobile #unity-canvas { width: 100%; height: 100% }
-#unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
-#unity-logo { width: 154px; height: 130px; background: url('unity-logo-light.png') no-repeat center }
-#unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; margin-left: 6.5px; background: url('progress-bar-empty-light.png') no-repeat center }
-#unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('progress-bar-full-light.png') no-repeat center }
-#unity-footer { position: relative }
-.unity-mobile #unity-footer { display: none }
-#unity-webgl-logo { float:left; width: 204px; height: 38px; background: url('webgl-logo.png') no-repeat center }
-#unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
-#unity-fullscreen-button { float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center }
-#unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0a3d62, #1e5f8c);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    .ctaDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: #00000055;
+        z-index: 99;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    #camera-text {
+        color: white;
+        font-size: 4vw;
+        max-width: 80%;
+        margin-bottom: 2rem;
+    }
+
+    #startARButton {
+        display: none;
+        background: white;
+        color: #0a3d62;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: transform 0.2s, opacity 0.2s;
+    }
+
+    #startARButton:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+
+    /* Проценты загрузки Unity */
+    #unity-loading-bar {
+        position: absolute;
+        top: 2vw;
+        left: 2vw;
+        font-size: 15vw;
+        font-weight: 700;
+        color: white;
+        letter-spacing: -0.02em;
+        z-index: 999;
+    }
+
+    @media (min-width: 768px) {
+        #unity-loading-bar {
+            font-size: 12rem;
+        }
+    }
+</style>
